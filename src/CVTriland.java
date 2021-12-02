@@ -5,20 +5,25 @@ import java.util.Scanner;
 public class CVTriland {
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int[] harga = new int[]{0, 0, 0, 0, 0};
+        String[] alamat={"","","","",""};
         System.out.println("List Pilihan");
         System.out.println("1. Daerah & Tanah");
         System.out.println("2. Pembayaran");
         System.out.println("3. Laporan");
         System.out.println("4. Keluar");
-        daerah();
+        System.out.print("Pilihan Anda: ");
+        int opsi = in.nextInt();
+        switch(opsi){
+            case 1: daerah(); break;
+        }
         System.out.println("hai teddy");
-        pembayaran(tanah());
+        pembayaran(tanah(harga,alamat));
     }
 
     static void daerah() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Pilihan Anda: ");
-        int opsi = in.nextInt();
+                
         System.out.println("List Daerah  ");
         System.out.println("1. Daerah Godean");
         System.out.println("2. Daerah Sleman");
@@ -28,11 +33,10 @@ public class CVTriland {
 
     }
 
-    static int[] tanah() {
+    static int[] tanah(int [] harga, String[] alamat) {
         Scanner in = new Scanner(System.in);
         System.out.print("Masukkan Daerah yang ingin dipilih : ");
-        String[] alamat;
-        int[] harga = new int[]{0, 0, 0, 0, 0};;
+        
         int daerah = in.nextInt();
         switch (daerah) {
             case (1):
@@ -40,7 +44,7 @@ public class CVTriland {
                 String[] Ukuran = {"{13x10)", "(22x10)", "(12x10)", "(12x10)", "(13x10)"};
                 harga = new int[]{300000000, 380000000, 210000000, 450000000, 480000000};
                 for (int i = 0; i < alamat.length; i++) {
-                    System.out.println(i + "." + " " + alamat[i] + "  " + Ukuran[i] + "  " + harga[i] + " Juta");
+                    System.out.println((i+1) + "." + " " + alamat[i] + "  " + Ukuran[i] + "  " + harga[i] + " Juta");
                 }
                 break;
             case (2):
@@ -82,7 +86,7 @@ public class CVTriland {
     }
 
     static void pembayaran(int[] harga) {
-        Scanner in = new Scanner(System.in);
+        Scanner in=new Scanner(System.in);
         System.out.println("Harga"+harga[0]);
        System.out.print("Masukkan Rumah yang ingin dipilih : ");
         int lokasi = in.nextInt();
