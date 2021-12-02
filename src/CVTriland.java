@@ -8,7 +8,7 @@ public class CVTriland {
         Scanner in = new Scanner(System.in);
         int[] harga = new int[]{0, 0, 0, 0, 0};
         String[] alamat={"","","","",""};
-        System.out.println("List Pil ihan");
+        System.out.println("List Pilihan");
         System.out.println("1. Daerah & Tanah");
         System.out.println("2. Pembayaran");
         System.out.println("3. Laporan");
@@ -18,7 +18,7 @@ public class CVTriland {
         switch(opsi){
             case 1: daerah(); break;
         }
-        System.out.println("hai teddy");
+        System.out.println("hai adi");
         pembayaran(tanah(harga,alamat));
     }
 
