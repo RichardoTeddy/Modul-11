@@ -11,7 +11,7 @@ public class CVTriland {
         System.out.println("3. Laporan");
         System.out.println("4. Keluar");
         daerah();
-        System.out.println("hai");
+        System.out.println("hai teddy");
         pembayaran(tanah());
     }
 
