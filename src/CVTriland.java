@@ -118,17 +118,16 @@ public class CVTriland {
         return total;
     }
     
-    public static void laporan(String[] data,int bayar){
+    public static void laporan(String[] data){
         System.out.println("Rangkuman pembelian:");
         System.out.println("Daerah yang dipilih: "+data[0]
                 +"\nAlamat yang dipilih: "+data[1]
-                +"\nYang harus dibayarkan: "+"Rp"+String.format("%,d",bayar)
+                +"\nYang harus dibayarkan: "+"Rp"+String.format("%,d",Integer.parseInt(data[2]))
                 +"\nContact person: "+data[3]
                 +"\nNo. HP:"+data[4]);
     }
     public static void main(String[] args) {
         String[] data=new String[]{"", "", "0", "", ""};
-        int bayar=0;
         int opt;
         do {
             opt=option();
@@ -137,11 +136,11 @@ public class CVTriland {
                     data=harga();
                     break;
                 case 2:
-                    bayar=pembayaran(Integer.parseInt(data[2]));
+                    int bayar=pembayaran(Integer.parseInt(data[2]));
                     data[2]=String.valueOf(bayar);
                     break;
                 case 3:
-                    laporan(data,bayar);                    
+                    laporan(data);                    
             }   
 
         } while (opt!= 4);
